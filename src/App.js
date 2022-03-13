@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Navbar currentUser={user}/>
       <Routes>
-        <Route path='/' element={<SOS/>}/>
+        <Route path='/' element={<SOS currentUser={user}/>}/>
         <Route path='/decesedregistry' element={<SafeCheck/>}/>
         <Route path='/signin' element={<SigninSignup/>}/>
       </Routes>

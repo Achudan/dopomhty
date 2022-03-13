@@ -6,7 +6,8 @@ import { geolocationOptions } from "../../constants/geolocationoptions";
 import Map from "../../components/Markers/map";
 import { locationsData } from '../../components/Markers/datamap'
 import CustomButton from "../../components/Custom-Button/custom-button.component";
-const SOS = () => {
+import { auth } from '../../firebase/firebase.utils';
+const SOS = ({currentUser}) => {
     const { location: currentLocation, error: currentError } = UseCurrentLocation(geolocationOptions);
     const { location, cancelLocationWatch, error } = UseWatchLocation(geolocationOptions);
     const [isWatchinForLocation, setIsWatchForLocation] = useState(true);
@@ -31,7 +32,12 @@ const SOS = () => {
 
     return (
         <div className="appContainer">
-            <CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton>
+            {
+                currentUser?
+                (<CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton>):
+                (<></>)
+            }
+            {/* <CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton> */}
             <div className="googlemap">
                 {location ? (
                     <Map className='mapping' data={locationsData} center={{ lat: 50.4501, lng: 30.5234 }} currentLat={location.latitude} currentLng={location.longitude} />

@@ -4,9 +4,11 @@ import FormInput from "../Form-Input/form-input.component";
 import CustomButton from "../Custom-Button/custom-button.component";
 import { useState } from "react/cjs/react.development";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () =>{
     const[state, setState] = useState({displayName:'', email:'', password:'', confirmPassword:''});
+    const navigate = useNavigate();
     const handleChange = (e) =>{
         setState((values)=>({...values, [e.target.name]:e.target.value}));
     }
@@ -28,6 +30,7 @@ const SignUp = () =>{
                 confirmPassword: confirmPassword
             }
             setState(updatedUser)
+            navigate('/');
         }
         catch(error){
             console.log(error);
