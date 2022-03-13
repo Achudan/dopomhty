@@ -10,7 +10,8 @@ const Nav = styled.nav`
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
-
+  font-family: fantasy;
+  font-size: 30px;
   .logo {
     padding: 15px 0;
     text-decoration : none
