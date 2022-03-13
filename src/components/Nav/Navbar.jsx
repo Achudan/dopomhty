@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'npm insta';
+import styled from 'styled-components';
 import Burger from './Burger';
+import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
   width: 100%;
@@ -12,15 +13,19 @@ const Nav = styled.nav`
 
   .logo {
     padding: 15px 0;
+    text-decoration : none
   }
 `
 
 const Navbar = () => {
   return (
     <Nav>
-      <div className="logo">
+      <Link className='logo' to="/" >
+          DOPOMOHTY
+      </Link>
+      {/* <div className="logo">
         DOPOMOHTY
-      </div>
+      </div> */}
       <Burger />
     </Nav>
   )

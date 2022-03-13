@@ -7,11 +7,10 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <SOS/>
       <Routes>
-        <Route path='/' element={<RecipePage/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/ingredients/:ingredientName' element={<IngredientsPage/>} />
+        <Route path='/' element={<SOS/>}/>
+        {/* <Route path='/deceased' element={<Deceased/>}/>
+        <Route path='/signin' element={<Signin/>}/> */}
       </Routes>
     </div>
   );

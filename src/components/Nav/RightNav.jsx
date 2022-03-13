@@ -35,7 +35,7 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
       <li>Home</li>
-      <li>Wasted</li>
+      <li>Deceased</li>
       <li>Sign In</li>
       <li>Sign Up</li>
     </Ul>
