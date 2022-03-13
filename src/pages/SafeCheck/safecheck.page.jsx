@@ -51,19 +51,19 @@ class SafeCheck extends Component {
         <form onSubmit={this.handleSubmit}>
             <div>
                 <div>
-                    <input placeholder="First Name" type="text" value = {this.state.firstName} onChange={this.handleChange}/>
+                    <input placeholder="First Name" type="text" value = {this.state.firstName} onChange={this.handleChange} required/>
                 </div>
                 <div>
-                    <input placeholder="Last Name" type="text"   value = {this.state.lastName} onChange={this.handleLastNameChange}/>
+                    <input placeholder="Last Name" type="text"   value = {this.state.lastName} onChange={this.handleLastNameChange}required/>
                 </div>
                 <div>
-                    <input placeholder="Telephone Number" type="tel"/>
+                    <input placeholder="Telephone Number" type="tel"required/>
                 </div>
                 <div>
-                    <input placeholder="Email Address" type="email"/>
+                    <input placeholder="Email Address" type="email"required/>
                 </div>
                 <div>
-                    <input placeholder="Identification Number" type="text"/>
+                    <input placeholder="Identification Number" type="text"required/>
                 </div>
 				
                 
