@@ -1,8 +1,7 @@
 import React from "react";
 
-const SafeCheck = () =>{
+import './safecheck.style.css';
 
-}
-
-
-export default SafeCheck;
+export const Name = props => (
+    <label class = "name">Name</label>
+);
