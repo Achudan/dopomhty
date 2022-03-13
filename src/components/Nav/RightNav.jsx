@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Ul = styled.ul`
   margin-top:0px;
@@ -34,10 +35,8 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-      <li>Home</li>
-      <li>Deceased</li>
-      <li>Sign In</li>
-      <li>Sign Up</li>
+      <li><Link className="option" to="/decesedregistry">Deceased Registry</Link></li>
+      <li><Link className="option" to="/signin">Sign In/Up</Link></li>
     </Ul>
   )
 }
