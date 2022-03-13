@@ -42,7 +42,12 @@ const Ul = styled.ul`
 const RightNav = ({ open, currentUser }) => {
   return (
     <Ul open={open}>
-      <li><Link className="option" to="/decesedregistry">Deceased Registry</Link></li>
+      {
+                currentUser?
+                (<li><Link className="option" to="/decesedregistry">Deceased Registry</Link></li>):
+                (<></>)
+            }
+      {/* <li><Link className="option" to="/decesedregistry">Deceased Registry</Link></li> */}
       <li><Link className="option" to="/safelist">Find your pal</Link></li>
       {/* <li><Link className="option" to="/signin">Sign In/Up</Link></li> */}
       {
