@@ -34,7 +34,7 @@ const SOS = ({currentUser}) => {
         <div className="appContainer">
             {
                 currentUser?
-                (<CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton>):
+                (<CustomButton type="button" onClick={() => callSOS(location)} style={{'width': '100vw'}}>SOS</CustomButton>):
                 (<></>)
 
                 
