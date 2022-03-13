@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Burger from './Burger';
 import { Link } from "react-router-dom";
 
+
 const Nav = styled.nav`
   width: 100%;
   height: 55px;
@@ -18,7 +19,7 @@ const Nav = styled.nav`
   }
 `
 
-const Navbar = () => {
+const Navbar = ({currentUser}) => {
   return (
     <Nav>
       <Link className='logo' to="/" >
@@ -27,7 +28,7 @@ const Navbar = () => {
       {/* <div className="logo">
         DOPOMOHTY
       </div> */}
-      <Burger />
+      <Burger currentUser={currentUser}/>
     </Nav>
   )
 }

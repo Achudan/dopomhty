@@ -3,7 +3,7 @@ import './Sign-up.styles.scss';
 import FormInput from "../Form-Input/form-input.component";
 import CustomButton from "../Custom-Button/custom-button.component";
 import { useState } from "react/cjs/react.development";
-// import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 const SignUp = () =>{
     const[state, setState] = useState({displayName:'', email:'', password:'', confirmPassword:''});
@@ -17,13 +17,21 @@ const SignUp = () =>{
             alert('password mismatch');
             return;
         }
-        // try{
-        //     const {user} = await auth.createUserWithEmailAndPassword(email, password);
-        //     await createUserProfileDocument(user, {displayName});
-        // }
-        // catch(error){
-        //     console.log(error);
-        // }
+        try{
+            const {user} = await auth.createUserWithEmailAndPassword(email, password);
+            await createUserProfileDocument(user, {displayName});
+            const updatedUser = {
+                ...state,
+                displayName: displayName,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
+            }
+            setState(updatedUser)
+        }
+        catch(error){
+            console.log(error);
+        }
     }
     return(
         <div className="sign-up">
