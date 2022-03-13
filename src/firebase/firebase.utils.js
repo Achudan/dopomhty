@@ -34,6 +34,29 @@ export const createUserProfileDocument = async (userAuth, otherData) =>{
   return docRef;
 }
 
+
+export const createDeceasedPeopleDocument = async (randomid, otherData) =>{
+  if(!randomid){
+    return;
+  }
+
+  const docRef = firestore.doc(`deceased/${randomid}`);
+  const snapShot = await docRef.get();
+
+  // if(!snapShot.exists){
+  //   console.log('creating new user')
+  //   const {displayName, email} = userAuth;
+    const createdAt = new Date();
+    try{
+      await docRef.set({createdAt, ...otherData})
+    }
+    catch(error){
+      console.log('error creating user', error.message())
+    }
+  // }
+  return docRef;
+}
+
 firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

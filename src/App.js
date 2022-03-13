@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import SigninSignup from './pages/Signin/signin.component';
 import { useEffect, useState } from 'react';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import DeceasedRegistry from './pages/DeceasedRegistry/deceasedRegistry.component';
 // import DeceasedRegistry from './pages/DeceasedRegistry/deceasedRegistry.component';
 import SafeCheck from './pages/SafeCheck/safecheck.page';
 function App() {
@@ -29,7 +30,8 @@ function App() {
       <Navbar currentUser={user}/>
       <Routes>
         <Route path='/' element={<SOS currentUser={user}/>}/>
-        <Route path='/decesedregistry' element={<SafeCheck/>}/>
+        <Route path='/decesedregistry' element={<DeceasedRegistry/>}/>
+        <Route path='/safelist' element={<SafeCheck/>}/>
         <Route path='/signin' element={<SigninSignup/>}/>
       </Routes>
     </div>
