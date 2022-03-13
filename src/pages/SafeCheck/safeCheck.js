@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Name } from './safecheck.page';
 import './safecheck.style.css';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 
 class SafeCheck extends Component {
     constructor(props) {
