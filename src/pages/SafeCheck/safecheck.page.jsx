@@ -47,7 +47,7 @@ class SafeCheck extends Component {
     render() {
     return (
         <div className="qfc-container">
-        <h4>Safe check</h4>
+        <h4>Find your loved one is safe</h4>
         <form onSubmit={this.handleSubmit}>
             <div>
                 <div>

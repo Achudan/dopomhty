@@ -42,7 +42,7 @@ const DeceasedRegistry = () => {
     }
     return (
         <div className="qfc-container">
-            <h4>Report deceased</h4>
+            <h4>Report Deceased/ Missing</h4>
             {/* <form onSubmit={handleSubmit}>
                 <FormInput name="name" type="text" value={state.name} handleChange={(e) => handleChange(e)} label="Name" required />
                 <FormInput name="id" type="text" value={state.id} handleChange={(e) => handleChange(e)} label="ID" required />
