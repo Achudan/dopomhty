@@ -36,6 +36,11 @@ const SOS = ({currentUser}) => {
                 currentUser?
                 (<CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton>):
                 (<></>)
+
+                
+            }
+            {
+                hotspot?(<h2 style={{'marginTop':'0px'}}>Your current location is now added in heat map</h2>):(<></>)
             }
             {/* <CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton> */}
             <div className="googlemap">
