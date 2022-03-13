@@ -5,7 +5,7 @@ import './safecheck.style.scss';
 class SafeCheck extends Component {
     constructor(props) {
         super(props);
-        this.state = {firstName: '',lastName: '', phone: '' , e_mail: ''};
+        this.state = {firstName: '',lastName: '', phone: '' , e_mail: '', status:false};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleLastNameChange = this.handleLastNameChange.bind(this);
@@ -37,6 +37,7 @@ class SafeCheck extends Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ firstName: this.state.firstName, lastName: this.state.lastName,phone: this.state.phone,e_mail: this.state.e_mail })
         };
+        this.setState({status: true});
         fetch('https://reqres.in/api/posts', requestOptions)
             .then(response => response.json())
             .then(data => this.setState({ postId: data.id }));
@@ -60,6 +61,9 @@ class SafeCheck extends Component {
                 <div>
                     <input placeholder="Email Address" type="email"/>
                 </div>
+                <div>
+                    <input placeholder="Identification Number" type="text"/>
+                </div>
 				
                 
                 <div>
@@ -67,6 +71,9 @@ class SafeCheck extends Component {
                 </div>
             </div>
         </form>
+        {
+            this.state.status?<p>we will send you the status</p>:<p></p>
+        }
     </div>
     );
   }
