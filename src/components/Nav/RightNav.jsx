@@ -13,7 +13,8 @@ const Ul = styled.ul`
   li {
     padding: 18px 10px;
     align-self: flex-start;
-    text-color: white
+    text-color: white;
+    
   }
 
   @media (max-width: 768px) {
@@ -46,7 +47,7 @@ const RightNav = ({ open, currentUser }) => {
       {/* <li><Link className="option" to="/signin">Sign In/Up</Link></li> */}
       {
                 currentUser?
-                (<div className="option" onClick={()=>auth.signOut()}>Logout</div>):
+                (<li className="option" onClick={()=>auth.signOut()}>Logout</li>):
                 (<li><Link className="option" to="/signin">Sign In/Up</Link></li>)
             }
             {console.log('user',currentUser)}
