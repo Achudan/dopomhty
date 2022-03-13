@@ -30,7 +30,8 @@ class SafeCheck extends Component {
         this.setState({e_mail: event.target.value});
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         // Simple POST request with a JSON body using fetch
         const requestOptions = {
             method: 'POST',
