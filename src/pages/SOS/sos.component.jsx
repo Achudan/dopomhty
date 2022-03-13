@@ -5,6 +5,7 @@ import UseWatchLocation from "../../components/UserCurrentLocation/use-watch-loc
 import { geolocationOptions } from "../../constants/geolocationoptions";
 import Map from "../../components/Markers/map";
 import { locationsData } from '../../components/Markers/datamap'
+import CustomButton from "../../components/Custom-Button/custom-button.component";
 const SOS = () => {
     const { location: currentLocation, error: currentError } = UseCurrentLocation(geolocationOptions);
     const { location, cancelLocationWatch, error } = UseWatchLocation(geolocationOptions);
@@ -30,10 +31,7 @@ const SOS = () => {
 
     return (
         <div className="appContainer">
-            <header>
-                <button type='button' onClick={() => callSOS(location)}>SOS</button>
-                {/* {console.log(hotspot)} */}
-            </header>
+            <CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton>
             <div className="googlemap">
                 {location ? (
                     <Map className='mapping' data={locationsData} center={{ lat: 50.4501, lng: 30.5234 }} currentLat={location.latitude} currentLng={location.longitude} />
@@ -42,6 +40,11 @@ const SOS = () => {
                 )}
                 {error && <p className="errorMessage">Location Error: {error}</p>}
             </div>
+            {/* <header> */}
+                
+                {/* <button type='button' onClick={() => callSOS(location)}>SOS</button> */}
+                {/* {console.log(hotspot)} */}
+            {/* </header> */}
             {/* <Map data={locationsData} center={{ lat: 50.4501, lng: 30.5234 }} currentLat={location['latitude']} currentLng={location['longitude']} />; */}
         </div>
 
