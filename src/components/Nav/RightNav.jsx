@@ -12,6 +12,7 @@ const Ul = styled.ul`
   li {
     padding: 18px 10px;
     align-self: flex-start;
+    text-color: white
   }
 
   @media (max-width: 768px) {
@@ -28,6 +29,10 @@ const Ul = styled.ul`
 
     li {
       color: #fff;
+    }
+
+    a{
+      color: white
     }
   }
 `;
