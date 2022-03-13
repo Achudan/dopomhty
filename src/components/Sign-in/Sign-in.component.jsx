@@ -46,7 +46,7 @@ const Signin = () =>{
                     {/* <button type="submit">Sign in</button> */}
                 </div>
             </form>
-            <SignUp/>
+            {/* <SignUp/> */}
         </div>
     );
 }

@@ -8,6 +8,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import DeceasedRegistry from './pages/DeceasedRegistry/deceasedRegistry.component';
 // import DeceasedRegistry from './pages/DeceasedRegistry/deceasedRegistry.component';
 import SafeCheck from './pages/SafeCheck/safecheck.page';
+import SignUp from './components/Sign-up/Sign-up.component';
 function App() {
   const [user, setUser] = useState(null);
   useEffect(()=>{
@@ -33,6 +34,7 @@ function App() {
         <Route path='/decesedregistry' element={<DeceasedRegistry/>}/>
         <Route path='/safelist' element={<SafeCheck/>}/>
         <Route path='/signin' element={<SigninSignup/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
       </Routes>
     </div>
   );
