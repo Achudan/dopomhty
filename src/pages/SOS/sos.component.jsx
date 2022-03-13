@@ -40,7 +40,7 @@ const SOS = ({currentUser}) => {
                 
             }
             {
-                hotspot?(<h2 style={{'marginTop':'0px'}}>Your current location is now added in heat map</h2>):(<></>)
+               hotspot?( (hotspot['latitude']<50 && hotspot['latitude']>48)?(<h2 style={{'marginTop':'0px'}}>Your current location is now added in heat map</h2>):(<h2>Sorry you are out of Ukraine</h2>)):(<></>)
             }
             {/* <CustomButton type="button" onClick={() => callSOS(location)}>SOS</CustomButton> */}
             <div className="googlemap">
